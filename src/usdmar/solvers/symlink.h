@@ -4,18 +4,16 @@
 #include "usdmar/solvers/subsolver.h"
 
 
-class SymlinkSubSolver : public SubSolver {
+class SymlinkSubSolver final: public SubSolver {
 
 public:
-	SymlinkSubSolver();
-	~SymlinkSubSolver();
 
-	virtual const std::string GetName() override;
-	virtual std::string Resolve(std::string assetPath) override;
-	virtual void ConfigureFromJsObject(const JsObject& object) override;
+	const std::string GetName() override;
+	std::string Resolve(std::string assetPath) override;
+	void ConfigureFromJsObject(const JsObject& object) override;
 
-	virtual std::shared_ptr<SubSolver> CreateNew() const {
-		return std::shared_ptr<SymlinkSubSolver>(new SymlinkSubSolver());
+	inline std::shared_ptr<SubSolver> CreateNew() const {
+		return {};
 	};
 
 private:

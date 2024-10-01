@@ -3,20 +3,18 @@
 #include <iostream>
 #include "usdmar/solvers/subsolver.h"
 
-class RESTSubSolver : public SubSolver {
+class RESTSubSolver final : public SubSolver {
 
 public:
-	RESTSubSolver();
-	~RESTSubSolver();
 
-	virtual const std::string GetName() override;
+	const std::string GetName() override;
 	void SetHost(std::string host);
 	const std::string GetHost();
 	void SetEntryPoint(std::string entryPoint);
-	virtual std::string Resolve(std::string assetPath) override;
-	virtual void ConfigureFromJsObject(const JsObject& object) override;
-	virtual std::shared_ptr<SubSolver> CreateNew() const {
-		return std::shared_ptr<RESTSubSolver>(new RESTSubSolver());
+	std::string Resolve(std::string assetPath) override;
+	void ConfigureFromJsObject(const JsObject& object) override;
+	inline std::shared_ptr<SubSolver> CreateNew() const {
+		return {};
 	};
 
 

@@ -7,8 +7,6 @@
 #include "usdmar/solvers/symlink.h"
 #include "usdmar/utils.h"
 
-SymlinkSubSolver::SymlinkSubSolver() {}
-SymlinkSubSolver::~SymlinkSubSolver() = default;
 
 const std::string SymlinkSubSolver::GetName() {	return _name;}
 
@@ -26,5 +24,6 @@ std::string SymlinkSubSolver::Resolve(std::string assetPath)
 	}
 	return assetPath;
 }
+
 void SymlinkSubSolver::ConfigureFromJsObject(const JsObject & object) {}
 

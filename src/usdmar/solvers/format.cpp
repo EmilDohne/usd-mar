@@ -9,9 +9,6 @@
 
 
 
-FormatterSubSolver::FormatterSubSolver() {}
-FormatterSubSolver::~FormatterSubSolver() = default;
-
 // Name
 const std::string FormatterSubSolver::GetName() {
 	return _name;

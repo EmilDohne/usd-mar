@@ -8,11 +8,6 @@
 #include "usdmar/debug.h"
 
 
-RESTSubSolver::RESTSubSolver() {}
-RESTSubSolver::~RESTSubSolver() = default;
-
- 
-
 // Name
 const std::string RESTSubSolver::GetName() {
 	return _name;
@@ -63,10 +58,10 @@ void RESTSubSolver::ConfigureFromJsObject(const JsObject& object)
 	std::unique_ptr<std::string> host = _GetJsObjectValue<std::string>(object, "host");
 	std::unique_ptr<std::string> entryPoint = _GetJsObjectValue<std::string>(object, "entryPoint");
 
-	if (host != nullptr) {
+	if (host) {
 		SetHost(*host);
 	}
-	if (entryPoint != nullptr) {
+	if (entryPoint) {
 		SetEntryPoint(*entryPoint);
 	}
 }

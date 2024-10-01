@@ -4,18 +4,16 @@
 #include "usdmar/solvers/subsolver.h"
 
 
-class SubprocessSubSolver : public SubSolver {
+class SubprocessSubSolver final: public SubSolver {
 
 public:
-	SubprocessSubSolver();
-	~SubprocessSubSolver();
 
-	virtual const std::string GetName() override;
-	virtual std::string Resolve(std::string assetPath) override;
-	virtual void ConfigureFromJsObject(const JsObject& object) override;
+	const std::string GetName() override;
+	std::string Resolve(std::string assetPath) override;
+	void ConfigureFromJsObject(const JsObject& object) override;
 
-	virtual std::shared_ptr<SubSolver> CreateNew() const {
-		return std::shared_ptr<SubprocessSubSolver>(new SubprocessSubSolver());
+	inline std::shared_ptr<SubSolver> CreateNew() const {
+		return {};
 	};
 
 private:

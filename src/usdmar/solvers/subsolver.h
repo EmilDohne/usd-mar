@@ -11,8 +11,8 @@ PXR_NAMESPACE_USING_DIRECTIVE
 
 class SubSolver {
 public:
-	SubSolver() {};
-	~SubSolver() = default;
+	SubSolver() = default;
+	virtual ~SubSolver() = 0;
 
 	virtual const std::string GetName() = 0;
 	virtual std::string Resolve(std::string assetPath) = 0;

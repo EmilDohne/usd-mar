@@ -5,9 +5,6 @@
 #include "usdmar/solvers/env.h"
 #include "usdmar/utils.h"
 
-EnvSubSolver::EnvSubSolver() {}
-EnvSubSolver::~EnvSubSolver() = default;
-
 const std::string EnvSubSolver::GetName() {	return _name;}
 
 std::string EnvSubSolver::Resolve(std::string assetPath)

@@ -5,17 +5,15 @@
 
 #include "usdmar/solvers/subsolver.h"
 
-class FormatterSubSolver : public SubSolver {
+class FormatterSubSolver final : public SubSolver {
 
 public:
-	FormatterSubSolver();
-	~FormatterSubSolver();
 
-	virtual const std::string GetName() override;
-	virtual std::string Resolve(std::string assetPath) override;
-	virtual void ConfigureFromJsObject(const JsObject& object) override;
-	virtual std::shared_ptr<SubSolver> CreateNew() const {
-		return std::shared_ptr<FormatterSubSolver>(new FormatterSubSolver());
+	const std::string GetName() override;
+	std::string Resolve(std::string assetPath) override;
+	void ConfigureFromJsObject(const JsObject& object) override;
+	inline std::shared_ptr<SubSolver> CreateNew() const {
+		return {};
 	};
 
 

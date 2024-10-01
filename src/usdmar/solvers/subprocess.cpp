@@ -10,10 +10,6 @@
 #include "usdmar/debug.h"
 #include <subprocess.h>
 
-
-SubprocessSubSolver::SubprocessSubSolver() {}
-SubprocessSubSolver::~SubprocessSubSolver() = default;
-
 const std::string SubprocessSubSolver::GetName() {	return _name;}
 
 std::string SubprocessSubSolver::Resolve(std::string assetPath)
